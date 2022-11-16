@@ -1,0 +1,8 @@
+.Sale {
+	color: #ffffff;
+    background-color: #697dff;
+}
+
+.Sale > sapn {
+    text-decoration: underline;
+}
