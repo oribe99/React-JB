@@ -8,6 +8,7 @@ import EmployeeList from "../../EmployeeArea/EmployeeList/EmployeeList";
 import AddProduct from "../../ProductsArea/AddProduct/AddProduct";
 import EditProduct from "../../ProductsArea/EditProduct/EditProduct";
 import Register from "../../AuthArea/Register/Register";
+import Login from "../../AuthArea/Login/Login";
 
 function Routing(): JSX.Element {
 
@@ -21,6 +22,7 @@ function Routing(): JSX.Element {
         <>
             <Routes>
                 <Route path="/register" element={<Register />} />
+                <Route path="/login" element={<Login />} />
                 <Route path="/home" element={<Home />} />
                 <Route path="/" element={<Navigate to={"/home"} />} />
                 <Route path="/products" element={<ProductList />} />
