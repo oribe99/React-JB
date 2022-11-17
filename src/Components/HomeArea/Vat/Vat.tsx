@@ -33,7 +33,7 @@ function Vat(props: VatProps): JSX.Element {
 
             <p role={"result"}>{price}$ X {props.percent}% = {vat}$</p>
 
-            <button onClick={handleClear}>Clear</button>
+            <button role={"button"} onClick={handleClear}>Clear</button>
         </div>
     );
 }

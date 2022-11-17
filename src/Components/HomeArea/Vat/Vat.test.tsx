@@ -51,4 +51,11 @@ describe("VAT component", () => {
        userEvent.type(screen.getByPlaceholderText("enter price"), price.toString());
        expect(screen.getByRole("result")).toHaveTextContent(`${price}$ X ${percent}% = ${vat}$`);
     });
+
+    it("should clear values when clicking clear", () => {
+        const price = Math.floor(Math.random() * 1000);
+        userEvent.type(screen.getByPlaceholderText("enter price"), price.toString());
+        userEvent.click(screen.getByRole("button", {name : "Clear"}));
+    
+    })
 })

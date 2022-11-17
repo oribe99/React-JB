@@ -7,6 +7,7 @@ import LoadableExport from 'react-loadable';
 import EmployeeList from "../../EmployeeArea/EmployeeList/EmployeeList";
 import AddProduct from "../../ProductsArea/AddProduct/AddProduct";
 import EditProduct from "../../ProductsArea/EditProduct/EditProduct";
+import Register from "../../AuthArea/Register/Register";
 
 function Routing(): JSX.Element {
 
@@ -19,6 +20,7 @@ function Routing(): JSX.Element {
         // fragment
         <>
             <Routes>
+                <Route path="/register" element={<Register />} />
                 <Route path="/home" element={<Home />} />
                 <Route path="/" element={<Navigate to={"/home"} />} />
                 <Route path="/products" element={<ProductList />} />
