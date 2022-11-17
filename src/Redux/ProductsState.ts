@@ -70,10 +70,10 @@ export function productsReducer(currentState = new ProductsState(), action: Prod
 // export const productsStore = createStore(productsReducer);
 
 // With middleware, without devtools
-// export const productsStore = createStore(productsReducer, applyMiddleware(countActions, logger));
+export const productsStore = createStore(productsReducer, applyMiddleware(countActions, logger));
 
 // With devtools, without middleware
 // export const productsStore = createStore(productsReducer, composeWithDevTools());
 
 // With middleware, with devtools
-export const productsStore = createStore(productsReducer, compose(applyMiddleware(countActions, logger, addAction), composeWithDevTools()));
+// export const productsStore = createStore(productsReducer, compose(applyMiddleware(countActions, logger, addAction), composeWithDevTools()));
