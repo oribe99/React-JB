@@ -1,0 +1,14 @@
+.CategoryRow td {
+    width: 30%;
+    text-align: center;
+    border: 1px solid;
+}
+
+.CategoryRow a {
+    text-decoration: none;
+}
+
+.CategoryRow img {
+    width: 200px;
+    height: 200px;
+}

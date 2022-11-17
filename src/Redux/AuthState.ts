@@ -6,6 +6,13 @@ import {createStore} from "redux";
 export class AuthState {
     public token: string = null;
     public user: UserModel = null;
+
+    public constructor() {
+        this.token = localStorage.getItem("token");
+        if (this.token) {
+            this.user = jwtDecode<{ user: UserModel }>(this.token).user;
+        }
+    }
 }
 
 // 2 - ActionType
@@ -43,9 +50,11 @@ export function authReducer(currentState = new AuthState(), action: AuthAction):
         case AuthActionType.Login: // Here, the payload is the token
             newState.token = action.payload;
             newState.user = jwtDecode<{ user: UserModel }>(action.payload).user;
+            localStorage.setItem("token", action.payload);
             break;
         case AuthActionType.Logout: // Here, we don't have a payload
             newState.token = newState.user = null;
+            localStorage.removeItem("token");
             break;
     }
     return newState;

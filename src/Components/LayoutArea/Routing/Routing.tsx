@@ -9,6 +9,7 @@ import AddProduct from "../../ProductsArea/AddProduct/AddProduct";
 import EditProduct from "../../ProductsArea/EditProduct/EditProduct";
 import Register from "../../AuthArea/Register/Register";
 import Login from "../../AuthArea/Login/Login";
+import CategoriesList from "../../CategoriesArea/CategoriesList/CategoriesList";
 
 function Routing(): JSX.Element {
 
@@ -29,6 +30,7 @@ function Routing(): JSX.Element {
                 <Route path="/about" element={<LazyAbout />} />
                 <Route path="/employees" element={<EmployeeList />} />
                 <Route path="/products/new" element={<AddProduct />} />
+                <Route path="/categories" element={<CategoriesList />} />
                 {/*Default Route*/}
                 <Route path="/*" element={<PageNotFound />} />
                 {/*Route with parameter*/}

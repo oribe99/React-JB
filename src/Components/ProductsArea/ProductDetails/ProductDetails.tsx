@@ -6,6 +6,7 @@ import ProductModel from "../../../Models/ProductModel";
 import appConfig from "../../../Utils/AppConfig";
 import productsService from "../../../Services/ProductsService";
 import notifyService from "../../../Services/NotifyService";
+import authService from "../../../Services/AuthService";
 
 function ProductDetails(): JSX.Element {
 
@@ -50,10 +51,14 @@ function ProductDetails(): JSX.Element {
                     <br />
 
                     <NavLink to={"/products"}>Back</NavLink>
-                    <span> | </span>
-                    <NavLink to={"#"} onClick={deleteProduct}>Delete</NavLink>
-                    <span> | </span>
-                    <NavLink to={"/products/edit/" + product?.id}>Edit</NavLink>
+                    {authService.isLoggedIn &&
+                        <>
+                            <span> | </span>
+                            <NavLink to={"#"} onClick={deleteProduct}>Delete</NavLink>
+                            <span> | </span>
+                            <NavLink to={"/products/edit/" + product?.id}>Edit</NavLink>)
+                        </>
+                    }
                 </>
             }
         </div>

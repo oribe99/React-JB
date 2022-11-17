@@ -5,6 +5,7 @@ import ProductModel from "../../../Models/ProductModel";
 import ProductCard from "../ProductCard/ProductCard";
 import {NavLink} from "react-router-dom";
 import usePageTitle from "../../../Utils/usePageTitle";
+import authService from "../../../Services/AuthService";
 
 function ProductList(): JSX.Element {
 
@@ -22,7 +23,7 @@ function ProductList(): JSX.Element {
         <div className="ProductList">
 
             { products.length === 0 && <div>Loading...</div>}
-            <NavLink to={"/products/new"}>➕</NavLink>
+            { authService.isLoggedIn && <NavLink to={"/products/new"}>➕</NavLink>}
 
             { products.map(product => <ProductCard key={product.id} product={product}/>) }
         </div>

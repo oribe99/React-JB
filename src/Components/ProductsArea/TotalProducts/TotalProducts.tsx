@@ -8,9 +8,10 @@ function TotalProducts(): JSX.Element {
 
     useEffect(() => {
         setCount(productsStore.getState().products.length);
-        productsStore.subscribe(() => {
+        const unsubscribe = productsStore.subscribe(() => {
             setCount(productsStore.getState().products.length);
         })
+        return () => unsubscribe();
     }, []);
 
     return (

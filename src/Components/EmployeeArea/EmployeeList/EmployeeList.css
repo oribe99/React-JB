@@ -1,3 +1,7 @@
-.EmployeeList {
-	
+.EmployeeList table{
+	width: 100%;
+}
+
+.EmployeeList th, td{
+    border: 1px solid;
 }

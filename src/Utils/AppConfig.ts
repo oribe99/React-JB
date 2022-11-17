@@ -14,6 +14,8 @@ class DevConfig extends AppConfig {
     public employeeImagesUrl = "http://localhost:3030/api/employees/images/";
     public registerUrl = "http://localhost:3030/api/auth/register/";
     public loginUrl = "http://localhost:3030/api/auth/login/";
+    public categoriesUrl = "http://localhost:3030/api/categories/";
+    public categoriesImagesUrl = "http://localhost:3030/api/categories/images/";
 }
 
 //Prod configuration...
@@ -24,6 +26,9 @@ class ProdConfig extends AppConfig {
     public employeeImagesUrl = "http://northwind/api/employees/images/";
     public registerUrl = "http://northwind/api/auth/register/";
     public loginUrl = "http://northwind/api/auth/login/";
+    public categoriesUrl = "http://northwind/api/categories/";
+    public categoriesImagesUrl = "http://northwind/api/categories/images/";
+
 }
 
 const appConfig = process.env.NODE_ENV === "development" ? new DevConfig() : new ProdConfig();
